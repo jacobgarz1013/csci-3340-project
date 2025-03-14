@@ -10,3 +10,4 @@ Edit the task
 Confirm that a task has been completed
 ## Implementation
 The application will be specifically developed with the use of python's TKINTER (gui) library * Utilizing this powerful python library will allow us to create widgets in the application to provide the features we intend on creating.
+Additionally, the application will use SQLite as the database to store and manage the data. 
