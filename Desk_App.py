@@ -2,7 +2,7 @@ from tkinter import *
 import sqlite3 
 
 root = Tk()
-root.geometry("650x450")
+root.geometry("650x500") #window size 
 root.title('To-Do List')
 
 # Create the connector
@@ -158,7 +158,7 @@ descrip = Entry(root, width = 50)
 status = Entry(root, width = 50)
 group = Entry(root, width = 50)
 
-title_label = Label(root, text="Welcome to Your Task Assigner", font=("Times New Roman", 25, "bold"))
+title_label = Label(root, text="Welcome to Your Task Assigner", fg="dark green", font=("Times New Roman", 25, "bold"))
 name_label = Label(root, text = "Name")
 date_label = Label(root, text = "Due Date")
 descrip_label = Label(root, text = "Description")
@@ -177,34 +177,50 @@ listbox.config(yscrollcommand = scrollbar.set)
 
 #Color
 root.configure(background="lightblue")
-name_label.config(background="lightblue")
+'''name_label.config(background="lightblue")
 date_label.config(background="lightblue")
 descrip_label.config(background="lightblue")
 status_label.config(background="lightblue")
-group_label.config(background="lightblue")
+group_label.config(background="lightblue")'''
 title_label.config(background="lightblue")
 
 # Layout
-name.grid(row = 1, column = 1)
-due_date.grid(row = 2, column = 1)
-descrip.grid(row = 2, column = 1)
-status.grid(row = 3, column = 1)
-group.grid(row = 4, column = 1)
-
-title_label.grid(row = 0, column = 1, pady=5, padx=10)
-name_label.grid(row = 1, column = 0)
-date_label.grid(row = 2, column = 0)
-descrip_label.grid(row = 2, column = 0)
-status_label.grid(row = 3, column = 0)
-group_label.grid(row = 4, column = 0)
+### Commented out lines are from original, except for title
+#name.grid(row = 0, column = 1)
+name.place(x=175, y=75)
+#due_date.grid(row = 1, column = 1)
+due_date.place(x=175, y=100)
+#descrip.grid(row = 2, column = 1)
+descrip.place(x=175, y=125)
+#status.grid(row = 3, column = 1)
+status.place(x=175, y=150)
+#group.grid(row = 4, column = 1)
+group.place(x=175, y=175)
+#title_label.grid(row = 0, column = 1, pady=5, padx=10)
+title_label.place(x=50, y=0, width=550, relheight=0.1)
+#name_label.grid(row = 0, column = 0)
+name_label.place(x=128, y=75)
+#date_label.grid(row = 1, column = 0)
+date_label.place(x=112, y=100)
+#descrip_label.grid(row = 2, column = 0)
+descrip_label.place(x=100, y=125)
+#status_label.grid(row = 3, column = 0)
+status_label.place(x=128, y=150)
+#group_label.grid(row = 4, column = 0)
+group_label.place(x=75, y=175)
 
 #might change to (x,y) coordinates to make the layout more compact, but still readable
-submit_button.grid(row = 5, column = 1, sticky= E, pady=3) #(x=450, y = 150)
-update_button.grid(row = 7, column = 1, sticky= W, pady=5)
-delete_button.grid(row = 7, column = 1, sticky= E)
+#submit_button.grid(row = 5, column = 1, sticky= E, pady=3) 
+submit_button.place(x=450, y = 205, width=60, height=25) 
+#update_button.grid(row = 7, column = 1, sticky= W, pady=5)
+update_button.place(x=150, y= 425)
+#delete_button.grid(row = 7, column = 1, sticky= E)
+delete_button.place(x=490, y=425)
 
-listbox.grid(row = 6, column = 0, columnspan = 2)
-scrollbar.grid(row = 6, column = 2, sticky = 'ns')
+#listbox.grid(row = 6, column = 0, columnspan = 2)
+listbox.place(x=150, y=250, width=375)
+#scrollbar.grid(row = 6, column = 2, sticky = 'ns')
+scrollbar.place(x=545, y=250, height=165)
 
 query_info()
 
